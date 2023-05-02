@@ -1,4 +1,6 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // eslint-disable-next-line react/prop-types
 const Chef = ({chef}) => {
@@ -15,7 +17,8 @@ const Chef = ({chef}) => {
     <p className='text-lg'>Number of Recipies:{num_of_recipes}</p>
     <p className='text-lg'>Likes:{likes}</p>
     <div className="card-actions justify-start">
-      <button className="btn btn-warning text-sm text-slate-100">View Recipies</button>
+
+     <Link to={`/recipe/${id}`}> <button className="btn btn-warning text-sm text-slate-100">View Recipies</button></Link>
     </div>
   </div>
 </div>   
