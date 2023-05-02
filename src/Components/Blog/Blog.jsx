@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import Login from '../Layout/Login/Login';
 
 const Blog = () => {
+    const [recipic,setRecipic]=useState([])
+  
+   {
+    useEffect(()=>{
+        fetch('/public/sample.json')
+        .then(res=>res.json())
+        .then(data=>setRecipic(data))
+    },[])
+   }
+  
+
+    
     return (
         <div>
-           <h2>This is blog</h2> 
+          {
+            recipic.map(recipics=><Login key={recipics.id}recipics={recipics}></Login>)
+          }
         </div>
     );
 };
