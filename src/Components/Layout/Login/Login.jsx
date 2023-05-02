@@ -1,15 +1,16 @@
 /* eslint-disable react/prop-types */
+
 import React from 'react';
 
 
-const Login = ({ recipics }) => {
-   
 
+const Login = () => {
+    
+ 
     return (
-        <div>
-          <h2>This is login</h2>
-
-        </div>
+      <div>
+        <h2>login</h2>
+      </div>
     );
 };
 
