@@ -142,9 +142,22 @@ const Home = () => {
   </div>
 </div>
 
+</div>
+<h2 className='mt-16 text-center text-5xl text-amber-500 font-bold'>About Us</h2>
+<div className='flex flex-col lg:flex-row justify-around mt-20 bg-slate-300 p-10'><hr></hr>
+
+  <div className='text-center mt-10'>
+    <h2 className=' text-3xl text-center'>History</h2>
+    <h2 className='text-center text-7xl'> About us</h2>
+    <p className='font-serif mt-9'>Food master is a online food shop where customer can get his <br></br>favourite food,order his favourite food and we send<br></br> the food to the customer within one hour</p>
+  </div>
+  <div>
+    <img src="https://media.licdn.com/dms/image/C4E12AQElxELpie5_Mg/article-cover_image-shrink_600_2000/0/1520043109307?e=2147483647&v=beta&t=2rieZ_1fyy_X4A44JL4Ei6dUylJEhH1VFZboNgnfep0" alt="" />
+  </div>
+</div>
+   
 
 
-      </div>
       </>
     );
 };
