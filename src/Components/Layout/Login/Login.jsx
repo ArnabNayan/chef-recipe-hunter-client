@@ -1,12 +1,14 @@
 /* eslint-disable react/prop-types */
 
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 
 
 const Login = () => {
-
+ 
+  const {login}=useContext(AuthContext)
 
   const handleLogin=event=>{
     event.preventDefault()
@@ -15,7 +17,14 @@ const Login = () => {
     const password=form.password.value;
     console.log(email,password)
    
-
+   login(email,password)
+   .then(result=>{
+    const loggedUser=result.user
+    console.log(loggedUser)
+   })
+   .catch(error=>{
+    console.log(error)
+   })
     
   }
 
