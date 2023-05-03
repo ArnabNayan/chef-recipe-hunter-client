@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 
 
@@ -9,6 +9,10 @@ import { AuthContext } from '../../Provider/AuthProvider';
 const Login = () => {
  
   const {login}=useContext(AuthContext)
+  const navigate=useNavigate();
+  const location=useLocation();
+
+  const from=location.state?.from?.pathname||'/';
 
   const handleLogin=event=>{
     event.preventDefault()
@@ -21,6 +25,7 @@ const Login = () => {
    .then(result=>{
     const loggedUser=result.user
     console.log(loggedUser)
+    navigate(from,{replace:true})
    })
    .catch(error=>{
     console.log(error)

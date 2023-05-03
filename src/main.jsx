@@ -13,11 +13,14 @@ import Register from './Components/Layout/Register/Register.jsx';
 import Blog from './Components/Blog/Blog.jsx';
 import Recipies from './Components/Recipies/Recipies.jsx';
 import AuthProvider from './Components/Provider/AuthProvider.jsx';
+import PrivateRoute from './Route/PrivateRoute.jsx';
+import ErrorPage from './Components/Error/ErrorPage.jsx';
 
 const router=createBrowserRouter([
   {
     path:'/',
     element:<Main></Main>,
+    errorElement:<ErrorPage></ErrorPage>,
     children:[
       {
         path:'/',
@@ -37,7 +40,7 @@ const router=createBrowserRouter([
       },
       {
         path:'/recipe/:id',
-        element:<Recipies></Recipies>,
+        element:<PrivateRoute><Recipies></Recipies></PrivateRoute>,
         loader:({params})=>fetch(`http://localhost:5000/chefs/${params.id}`)
       }
     ]
