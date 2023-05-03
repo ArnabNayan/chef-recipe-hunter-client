@@ -13,7 +13,8 @@ const Recipies = () => {
 
   return (
     <>
-      <div className='flex flex-row gap-12 mt-10 lg:ms-10'>
+    <h2 className='text-4xl text-slate-500 font-bold mt-10 text-center'>About Chef and Chefs Recipe</h2><hr  className="border-b border-slate-300  w-1/2 mx-auto"/>
+      <div className='flex flex-row gap-12 mt-12 lg:ms-10'>
         <div className="rounded-full border-2 border-slate-300 w-60 h-60 lg:ms-10">
           <img className='rounded-full w-full h-full' src={recipes.picture} alt="" />
             
