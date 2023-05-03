@@ -8,12 +8,9 @@ const Recipies = () => {
   recipes.recipes.forEach(function (recipe) {
     return
   })
-  //    const{data,setData}=useState([]);
-  //     useEffect(()=>{
-  //         fetch(``)
-  //         .then(res=>res.json())
-  //         .then(data=>setData(data))
-  //     },[id, setData])
+
+ 
+
   return (
     <>
       <div className='flex flex-row gap-12 mt-10 lg:ms-10'>
@@ -39,16 +36,106 @@ const Recipies = () => {
             <p className='text-4xl text-gray-500 font-bold mt-7'>Short Bio</p>
             <p className='mt-2 font-semibold text-xl text-slate-500'>{recipes.bio}</p>
           </div>
-   
-    
-      <div className='mt-28'>
-       <p>{recipes.recipes[0].ingredients[0]}</p>
-      <p>{recipes.recipes[0].ingredients[1]}</p>
-      <p>{recipes.recipes[0].cooking_method}</p>  
-
+  
+          <p className='text-4xl text-gray-500 font-bold mt-8 text-center outline-dashed'>Favorited Recipies by {recipes.name}</p>
+      <div className='mt-5 grid grid-cols-1 lg:grid-cols-3 lg:p-12 gap-8'>
+      <div className="hero min-h-screen bg-base-200">
+  <div className="hero-content text-start">
+    <div>
+      <h1 className="text-2xl font-bold">{recipes.recipes[0].name}</h1>
+      <p className='font-semibold text-blue-500 mt-2 text-lg'>Ingredients:</p>
+        <ol className='mt-2 lg:ms-2'>
+          <li>1.{recipes.recipes[0].ingredients[0]}</li>
+          <li>2.{recipes.recipes[0].ingredients[1]}</li>
+          <li>3.{recipes.recipes[0].ingredients[2]}</li>
+          <li>4.{recipes.recipes[0].ingredients[3]}</li>
+          <li>5.{recipes.recipes[0].ingredients[4]}</li>
+        </ol>
+        <p className='font-semibold text-blue-500 mt-2 text-lg'>Method:</p>
+      <p className="py-6">{recipes.recipes[0].cooking_method}</p>
+      <div className='flex gap-4'>
+      <div className="rating">
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400"/>
+</div>
+<div>
+  <p className='text-xl'>{recipes.recipes[0].rating}</p>
+</div>
       </div>
+      <button className="btn btn-primary mt-5">Favourite</button>
+    </div>
+  </div>
+</div>
+
+<div className="hero min-h-screen bg-base-200">
+  <div className="hero-content text-start">
+    <div>
+      <h1 className="text-2xl font-bold">{recipes.recipes[1].name}</h1>
+      <p className='font-semibold text-blue-500 mt-2 text-lg'>Ingredients:</p>
+        <ol className='mt-2 lg:ms-2'>
+          <li>1.{recipes.recipes[1].ingredients[0]}</li>
+          <li>2.{recipes.recipes[1].ingredients[1]}</li>
+          <li>3.{recipes.recipes[1].ingredients[2]}</li>
+          <li>4.{recipes.recipes[1].ingredients[3]}</li>
+          <li>5.{recipes.recipes[1].ingredients[4]}</li>
+        </ol>
+        <p className='font-semibold text-blue-500 mt-2 text-lg'>Method:</p>
+      <p className="py-6">{recipes.recipes[1].cooking_method}</p>
+      <div className='flex gap-4'>
+      <div className="rating">
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400"/>
+</div>
+<div>
+  <p className='text-xl'>{recipes.recipes[1].rating}</p>
+</div>
+      </div>
+      <button className="btn btn-primary mt-5">Favourite</button>
+    </div>
+  </div>
+</div>
+
+<div className="hero min-h-screen bg-base-200">
+  <div className="hero-content text-start">
+    <div>
+      <h1 className="text-2xl font-bold">{recipes.recipes[2].name}</h1>
+      <p className='font-semibold text-blue-500 mt-2 text-lg'>Ingredients:</p>
+        <ol className='mt-2 lg:ms-2'>
+          <li>1.{recipes.recipes[2].ingredients[0]}</li>
+          <li>2.{recipes.recipes[2].ingredients[1]}</li>
+          <li>3.{recipes.recipes[2].ingredients[2]}</li>
+          <li>4.{recipes.recipes[2].ingredients[3]}</li>
+          <li>5.{recipes.recipes[2].ingredients[4]}</li>
+        </ol>
+        <p className='font-semibold text-blue-500 mt-2 text-lg'>Method:</p>
+      <p className="py-6">{recipes.recipes[2].cooking_method}</p>
+      <div className='flex gap-4'>
+      <div className="rating">
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400"/>
+</div>
+<div>
+  <p className='text-xl'>{recipes.recipes[2].rating}</p>
+</div>
+      </div>
+      <button className="btn btn-primary mt-5">Favourite</button>
+    </div>
+  </div>
+</div>
     
-    </>
+   
+     
+</div>
+ </>
   );
 };
 
