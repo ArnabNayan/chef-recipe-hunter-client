@@ -95,9 +95,10 @@ const Home = () => {
       </div>
       <hr />
       <h2 className='mt-16 text-center text-5xl text-amber-500 font-bold'>Some Popular Recipe</h2>
-      <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 mt-10 bg-slate-300 p-12'>
+     
+      <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 bg-slate-200 lg:mt-10 lg:p-12'>
        
-      <div className="hero min-h-screen bg-base-200">
+      <div className="hero min-h-screen  bg-base-200">
   <div className="hero-content flex-col lg:flex-row">
     <img src="https://cdn.tasteatlas.com//images/dishes/c7492357d5cd4e9690236c9d4e81e182.jpg?w=905&h=510" className="max-w-sm rounded-lg shadow-2xl" />
     <div>
