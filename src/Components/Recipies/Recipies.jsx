@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
-
+import LazyLoad from 'react-lazyload';
 import { ToastContainer, toast } from 'react-toast'
 const Recipies = () => {
 
@@ -42,9 +42,10 @@ const Recipies = () => {
     <>
     <h2 className='text-4xl text-slate-500 font-bold mt-10 text-center'>About Chef and Chefs Recipe</h2><hr  className="border-b border-slate-300  w-1/2 mx-auto"/>
       <div className='flex flex-row gap-12 mt-12 lg:ms-10'>
-        <div className=" border-2 border-slate-300 w-96 h-96 lg:ms-10">
+        <div className=" border-2 border-slate-300 w-96 h-2/4 lg:ms-10">
+        <LazyLoad>
           <img className=' w-full h-full' src={recipes.picture} alt="" />
-            
+          </LazyLoad>  
         </div>
         <div className='flex justify-center items-center'>
           <h2 className='text-6xl text-gray-500 font-bold'>{recipes.name}</h2>
