@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 
+import { ToastContainer, toast } from 'react-toast'
 const Recipies = () => {
+
+  const [isFavourite,setIsFavourite]=useState(false)
+  const [isFavourites,setIsFavourites]=useState(false)
+  const [isFavourited,setIsFavourited]=useState(false)
   const recipes = useLoaderData()
   console.log(recipes)
   const { id, name } = recipes
@@ -9,14 +14,36 @@ const Recipies = () => {
     return
   })
 
- 
+   const handleFavourite = () => 
+   setIsFavourite(true);
+   toast.success('This is my favourite food!',{
+       backgroundColor: 'yellowgreen',
+    color: '#ffffff',
+   
+   })
+
+   const handleFavourites = () => 
+   setIsFavourites(true);
+   toast.success('This is my favourite food!',{
+       backgroundColor: 'blue',
+    color: '#ffffff',
+   
+   })
+
+   const handleFavourited = () => 
+   setIsFavourited(true);
+   toast.success('This is my favourite food!',{
+       backgroundColor: 'indigo',
+    color: '#ffffff',
+   
+   })
 
   return (
     <>
     <h2 className='text-4xl text-slate-500 font-bold mt-10 text-center'>About Chef and Chefs Recipe</h2><hr  className="border-b border-slate-300  w-1/2 mx-auto"/>
       <div className='flex flex-row gap-12 mt-12 lg:ms-10'>
-        <div className="rounded-full border-2 border-slate-300 w-60 h-60 lg:ms-10">
-          <img className='rounded-full w-full h-full' src={recipes.picture} alt="" />
+        <div className=" border-2 border-slate-300 w-96 h-96 lg:ms-10">
+          <img className=' w-full h-full' src={recipes.picture} alt="" />
             
         </div>
         <div className='flex justify-center items-center'>
@@ -46,11 +73,11 @@ const Recipies = () => {
       <h1 className="text-2xl font-bold">{recipes.recipes[0].name}</h1>
       <p className='font-semibold text-blue-500 mt-2 text-lg'>Ingredients:</p>
         <ol className='mt-2 lg:ms-2'>
-          <li>1.{recipes.recipes[0].ingredients[0]}</li>
-          <li>2.{recipes.recipes[0].ingredients[1]}</li>
+          <li>{recipes.recipes[0].ingredients}</li>
+          {/* <li>2.{recipes.recipes[0].ingredients[1]}</li>
           <li>3.{recipes.recipes[0].ingredients[2]}</li>
           <li>4.{recipes.recipes[0].ingredients[3]}</li>
-          <li>5.{recipes.recipes[0].ingredients[4]}</li>
+          <li>5.{recipes.recipes[0].ingredients[4]}</li> */}
         </ol>
         <p className='font-semibold text-blue-500 mt-2 text-lg'>Method:</p>
       <p className="py-6">{recipes.recipes[0].cooking_method}</p>
@@ -66,7 +93,8 @@ const Recipies = () => {
   <p className='text-xl'>{recipes.recipes[0].rating}</p>
 </div>
       </div>
-      <button className="btn btn-primary mt-5">Favourite</button>
+      <button onClick={handleFavourite} disabled={isFavourite} className="btn btn-primary mt-5">Favourite</button>
+       <ToastContainer />
     </div>
   </div>
 </div>
@@ -77,11 +105,11 @@ const Recipies = () => {
       <h1 className="text-2xl font-bold">{recipes.recipes[1].name}</h1>
       <p className='font-semibold text-blue-500 mt-2 text-lg'>Ingredients:</p>
         <ol className='mt-2 lg:ms-2'>
-          <li>1.{recipes.recipes[1].ingredients[0]}</li>
-          <li>2.{recipes.recipes[1].ingredients[1]}</li>
+          <li>{recipes.recipes[1].ingredients}</li>
+          {/* <li>2.{recipes.recipes[1].ingredients[1]}</li>
           <li>3.{recipes.recipes[1].ingredients[2]}</li>
           <li>4.{recipes.recipes[1].ingredients[3]}</li>
-          <li>5.{recipes.recipes[1].ingredients[4]}</li>
+          <li>5.{recipes.recipes[1].ingredients[4]}</li> */}
         </ol>
         <p className='font-semibold text-blue-500 mt-2 text-lg'>Method:</p>
       <p className="py-6">{recipes.recipes[1].cooking_method}</p>
@@ -97,7 +125,8 @@ const Recipies = () => {
   <p className='text-xl'>{recipes.recipes[1].rating}</p>
 </div>
       </div>
-      <button className="btn btn-primary mt-5">Favourite</button>
+      <button onClick={handleFavourites} disabled={isFavourites} className="btn btn-primary mt-5">Favourite</button>
+         <ToastContainer />
     </div>
   </div>
 </div>
@@ -108,11 +137,11 @@ const Recipies = () => {
       <h1 className="text-2xl font-bold">{recipes.recipes[2].name}</h1>
       <p className='font-semibold text-blue-500 mt-2 text-lg'>Ingredients:</p>
         <ol className='mt-2 lg:ms-2'>
-          <li>1.{recipes.recipes[2].ingredients[0]}</li>
-          <li>2.{recipes.recipes[2].ingredients[1]}</li>
+          <li>{recipes.recipes[2].ingredients}</li>
+          {/* <li>2.{recipes.recipes[2].ingredients[1]}</li>
           <li>3.{recipes.recipes[2].ingredients[2]}</li>
           <li>4.{recipes.recipes[2].ingredients[3]}</li>
-          <li>5.{recipes.recipes[2].ingredients[4]}</li>
+          <li>5.{recipes.recipes[2].ingredients[4]}</li> */}
         </ol>
         <p className='font-semibold text-blue-500 mt-2 text-lg'>Method:</p>
       <p className="py-6">{recipes.recipes[2].cooking_method}</p>
@@ -128,7 +157,8 @@ const Recipies = () => {
   <p className='text-xl'>{recipes.recipes[2].rating}</p>
 </div>
       </div>
-      <button className="btn btn-primary mt-5">Favourite</button>
+      <button onClick={handleFavourited} disabled={isFavourited} className="btn btn-primary mt-5">Favourite</button>
+       <ToastContainer />
     </div>
   </div>
 </div>

@@ -3,12 +3,15 @@
 import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
-
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
+import { FaGoogle,FaGithub } from "react-icons/fa";
 
 
 const Login = () => {
+  const provider=new GoogleAuthProvider()
+  const githubProvider=new GithubAuthProvider()
+  const {login,googleSignIn,githubSignIn}=useContext(AuthContext)
  
-  const {login}=useContext(AuthContext)
   const navigate=useNavigate();
   const location=useLocation();
 
@@ -30,7 +33,31 @@ const Login = () => {
    .catch(error=>{
     console.log(error)
    })
-    
+ 
+  }
+
+  const handleGoogleSignIn=()=>{
+    googleSignIn(provider)
+    .then(result=>{
+     const googleUser=result.user
+     console.log(googleUser)
+     navigate(from,{replace:true})
+    })
+     .catch(error=>{
+       console.log(error.message)
+     })
+  }
+
+  const handleGithubSignIn=()=>{
+    githubSignIn(githubProvider)
+    .then(result=>{
+      const githubUser=result.user
+      console.log(githubUser)
+      navigate(from,{replace:true})
+    })
+    .catch(error=>{
+      console.log(error.message)
+    })
   }
 
     return (
@@ -57,9 +84,15 @@ const Login = () => {
             <div className="form-control mt-6">
               <button className="btn btn-primary">Login</button>
             </div>
+            <p className='label-text-alt link link-hover text-sm text-center'>or sign in with</p>
+            <div className='mx-auto flex gap-4'>
+               <p onClick={handleGoogleSignIn}className=" text-xl"><FaGoogle className='text-blue-600 '></FaGoogle></p>
+             <p onClick={handleGithubSignIn} className=" text-xl"><FaGithub></FaGithub></p>
+             </div>
           </form>
      
           <p>New to Food Master?<Link to="/register" className="label-text-alt link link-hover text-lg text-blue-500">Register</Link></p>
+     
         
         
         </div>
