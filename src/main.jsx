@@ -41,7 +41,7 @@ const router=createBrowserRouter([
       {
         path:'/recipe/:id',
         element:<PrivateRoute><Recipies></Recipies></PrivateRoute>,
-        loader:({params})=>fetch(`http://localhost:5000/chefs/${params.id}`)
+        loader:({params})=>fetch(`https://b7a10-chef-recipe-hunter-server-side-arnab-nayan-arnabnayan.vercel.app/chefs/${params.id}`)
       }
     ]
   }
