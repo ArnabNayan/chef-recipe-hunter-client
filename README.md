@@ -1,10 +1,10 @@
-Project Title
+Project Title:
 chef-recipe-hunter-client-side
 
-🚀 About Me
+🚀 About Me:
 I'm a student and learing developing...
 
-Environment Variables
+Environment Variables:
 To run this project, you will need to add the following environment variables to your .env file
 
 API_KEY
